@@ -1,0 +1,19 @@
+.card-header {
+  font-size: large;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+.table {
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
