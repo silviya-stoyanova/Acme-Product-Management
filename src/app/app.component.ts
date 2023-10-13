@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: '#root',
+  selector: 'ng-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent {
-  title = 'Acme Product Management';
+  pageTitle: string = 'Acme lala page title here';
 }
