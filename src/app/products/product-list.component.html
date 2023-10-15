@@ -10,6 +10,7 @@
       id="products__filter-input"
       class="products__filter-input"
       placeholder="Enter product..."
+      [(ngModel)]="filter"
     />
     <p class="products__filter-details" *ngIf="filter.length">
       Filtered by {{ filter }}
