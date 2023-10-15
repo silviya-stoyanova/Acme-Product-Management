@@ -1,8 +1,8 @@
 <section class="products">
   <header class="products__header">
-    <p class="products__header-title">Product List</p>
+    <p class="products__header-title">{{ pageTitle }}</p>
   </header>
-  <article class="products__filter">
+  <article class="products__filter" *ngIf="productList.length">
     <label for="products__filter-input" class="products__filter-label">
       Filter by:
     </label>
@@ -15,9 +15,11 @@
       Filtered by {{ filter }}
     </p>
   </article>
-  <section class="products__table">
+  <section class="products__table" *ngIf="productList.length">
     <article class="products__table-heading">
-      <button class="products__table-heading-button">Show Image</button>
+      <button class="products__table-heading-button" (click)="toggleImage()">
+        {{ toggleImageBtnText }}
+      </button>
       <p class="products__table-heading-text">Product</p>
       <p class="products__table-heading-text">Code</p>
       <p class="products__table-heading-text">Available</p>
@@ -25,22 +27,24 @@
       <p class="products__table-heading-text">5 Star Rating</p>
     </article>
     <ul class="products__table-list">
-      <li
-        class="products__table-list-item"
-        *ngFor="let product of productList"
-      >
+      <li class="products__table-list-item" *ngFor="let product of productList">
         <img
           class="products__table-list-item-image"
-          src="{{ product.imageUrl }}"
+          [src]="product.imageUrl"
+          [title]="product.name"
+          *ngIf="showImage"
         />
-        <p class="products__table-list-item-text products__table-list-item-text--blue">
+        <p *ngIf="!showImage"></p>
+        <p
+          class="products__table-list-item-text products__table-list-item-text--blue"
+        >
           {{ product.name }}
         </p>
         <p class="products__table-list-item-text">
           {{ product.code }}
         </p>
         <p class="products__table-list-item-text">
-          {{ product.available }}
+          {{ product.releaseDate }}
         </p>
         <p class="products__table-list-item-text">
           {{ product.price }}

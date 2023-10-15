@@ -6,23 +6,34 @@ import { Component } from '@angular/core';
   styleUrls: ['product-list.component.scss'],
 })
 export class ProductListComponent {
+  pageTitle: string = 'Product List';
   filter: string = '';
+  showImage: boolean = false;
+  toggleImageBtnText: string = 'Show Image';
   productList: Array<any> = [
     {
-      imageUrl: 'assets/images/hammer.png',
-      name: 'Hammer',
-      code: 'tbx 0048',
-      available: 'May 21, 2021',
-      price: '$8.90',
-      rating: '4.7',
+      id: 1,
+      name: 'Leaf Rake',
+      code: 'GDN-0011',
+      releaseDate: 'March 19, 2021',
+      description: 'Leaf rake with 48-inch wooden handle.',
+      price: 19.95,
+      rating: 3.2,
+      imageUrl: 'assets/images/leaf_rake.png',
     },
     {
-      imageUrl: 'assets/images/hammer.png',
-      name: 'Hammer 2',
-      code: 'tbx 0048 2',
-      available: 'May 22, 2022',
-      price: '$2.22',
-      rating: '2.2',
+      id: 2,
+      name: 'Garden Cart',
+      code: 'GDN-0023',
+      releaseDate: 'March 18, 2021',
+      description: '15 gallon capacity rolling garden cart',
+      price: 32.99,
+      rating: 4.2,
+      imageUrl: 'assets/images/garden_cart.png',
     },
   ];
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+    this.toggleImageBtnText = this.showImage ? 'Hide Image' : 'Show Image';
+  }
 }
