@@ -9,6 +9,16 @@ $blue-100: #9ed2ff;
 $blue-200: #9ed2ff;
 $blue-500: #0c6dd5;
 
+@keyframes full-rotation {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,4 +37,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $grey-500;
 }

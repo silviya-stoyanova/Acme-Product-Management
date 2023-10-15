@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['product-list.component.scss'],
 })
 export class ProductListComponent {
-  filter: string = 'dsa';
+  filter: string = '';
   productList: Array<any> = [
     {
       imageUrl: 'assets/images/hammer.png',

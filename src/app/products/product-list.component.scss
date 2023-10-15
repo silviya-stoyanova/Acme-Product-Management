@@ -78,7 +78,7 @@
       list-style: none;
       border-top: 1px solid $grey-500;
       display: flex;
-      overflow-x: scroll;
+      overflow-x: auto;
 
       @media screen and (min-width: 992px) {
         display: block;
@@ -100,6 +100,10 @@
 
         &-image {
           max-width: 48px;
+
+          &:hover {
+            animation: 2.3s infinite alternate full-rotation;
+          }
         }
 
         &-text {
