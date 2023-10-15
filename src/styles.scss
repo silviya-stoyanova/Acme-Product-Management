@@ -1,15 +1,19 @@
 @import url("~font-awesome/css/font-awesome.min.css");
 
-.card-header {
-  font-size: large;
-}
+$white: #ffffff;
 
-.card {
-  margin-top: 10px;
-}
+$grey-100: #fcf8fc;
+$grey-500: #dfdcdf;
 
-.table {
-  margin-top: 10px;
+$blue-100: #9ed2ff;
+$blue-200: #9ed2ff;
+$blue-500: #0c6dd5;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 a {

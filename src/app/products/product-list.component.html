@@ -1,19 +1,54 @@
-<section class="product-list">
-  <header class="product-list__header">
-    <p class="product-list__header-title">Product List</p>
+<section class="products">
+  <header class="products__header">
+    <p class="products__header-title">Product List</p>
   </header>
-  <article class="product-list__filter">
-    <label for="product-list__filter-input" class="product-list__filter-title">
+  <article class="products__filter">
+    <label for="products__filter-input" class="products__filter-label">
       Filter by:
     </label>
     <input
-      id="product-list__filter-input"
-      class="product-list__filter-input"
+      id="products__filter-input"
+      class="products__filter-input"
       placeholder="Enter product..."
     />
-    <p>Filtered by {{ filter }}</p>
+    <p class="products__filter-details" *ngIf="filter.length">
+      Filtered by {{ filter }}
+    </p>
   </article>
-  <article>
-    <button>Show Image</button>
-  </article>
+  <section class="products__table">
+    <article class="products__table-heading">
+      <button class="products__table-heading-button">Show Image</button>
+      <p class="products__table-heading-text">Product</p>
+      <p class="products__table-heading-text">Code</p>
+      <p class="products__table-heading-text">Available</p>
+      <p class="products__table-heading-text">Price</p>
+      <p class="products__table-heading-text">5 Star Rating</p>
+    </article>
+    <ul class="products__table-list">
+      <li
+        class="products__table-list-item"
+        *ngFor="let product of productList"
+      >
+        <img
+          class="products__table-list-item-image"
+          src="{{ product.imageUrl }}"
+        />
+        <p class="products__table-list-item-text products__table-list-item-text--blue">
+          {{ product.name }}
+        </p>
+        <p class="products__table-list-item-text">
+          {{ product.code }}
+        </p>
+        <p class="products__table-list-item-text">
+          {{ product.available }}
+        </p>
+        <p class="products__table-list-item-text">
+          {{ product.price }}
+        </p>
+        <p class="products__table-list-item-text">
+          {{ product.rating }}
+        </p>
+      </li>
+    </ul>
+  </section>
 </section>
