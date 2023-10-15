@@ -32,13 +32,25 @@
 
   &__table {
     padding: 16px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
 
     &-heading {
       padding: 8px;
       display: grid;
-      grid-template-columns: repeat(6, 110px);
       align-items: center;
+      justify-content: space-between;
       border-top: 1px solid $grey-500;
+      grid-auto-rows: 48px;
+      grid-auto-columns: 110px;
+
+      @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(6, 110px);
+      }
 
       &-button {
         color: $white;
@@ -64,13 +76,27 @@
 
     &-list {
       list-style: none;
-      border-top: 2px solid $grey-500;
+      border-top: 1px solid $grey-500;
+      display: flex;
+      overflow-x: scroll;
+
+      @media screen and (min-width: 992px) {
+        display: block;
+        border-width: 2px;
+      }
 
       &-item {
-        display: grid;
-        grid-template-columns: repeat(6, 110px);
+        flex: 1 0 175px;
         padding: 8px;
+        display: grid;
+        justify-content: space-between;
         align-items: center;
+        border-bottom: 1px solid $grey-500;
+        grid-auto-rows: 48px;
+
+        @media screen and (min-width: 992px) {
+          grid-template-columns: repeat(6, 110px);
+        }
 
         &-image {
           max-width: 48px;
@@ -83,8 +109,10 @@
         }
       }
 
-      &-item:not(:last-child) {
-        border-bottom: 1px solid $grey-500;
+      &-item:last-child {
+        @media screen and (min-width: 992px) {
+          border-bottom: none;
+        }
       }
     }
   }
