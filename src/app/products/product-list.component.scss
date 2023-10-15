@@ -1,4 +1,4 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 
 .products {
   margin: 24px 48px;
@@ -16,16 +16,17 @@
     padding: 16px;
 
     &-label {
+      margin-right: 36px;
     }
 
     &-input {
-        padding: 4px;
-        outline: 1px solid white;
+      padding: 4px;
+      outline: 1px solid white;
     }
 
     &-details {
-        font: 600 20px/24px sans-serif;
-        margin-top: 6px;
+      font: 600 20px/24px sans-serif;
+      margin-top: 6px;
     }
   }
 
@@ -33,53 +34,51 @@
     padding: 16px;
 
     &-heading {
+      padding: 8px;
+      display: grid;
+      grid-template-columns: repeat(6, 110px);
+      align-items: center;
+      border-top: 1px solid $grey-500;
+
+      &-button {
+        color: $white;
+        background: $blue-500;
+        border: 3px solid $blue-100;
+        border-radius: 4px;
         padding: 8px;
-        display: grid;
-        grid-template-columns: repeat(6, 110px);
-        align-items: center;
-        border-top: 1px solid $grey-500;
+        justify-self: start;
+      }
 
-        &-button {
-            color: $white;
-            background: $blue-500;
-            border: 3px solid $blue-100;
-            border-radius: 4px;
-            padding: 8px;
-            justify-self: start;
-        }
-
-        &-text {
-            color: $blue-500;
-            font-weight: 600;
-
-            
-        }
+      &-text {
+        color: $blue-500;
+        font-weight: 600;
+      }
     }
 
     &-list {
-        list-style: none;
-        border-top: 2px solid $grey-500;
-        
-        &-item {
-            display: grid;
-            grid-template-columns: repeat(6, 110px);
-            padding: 8px;
-            align-items: center;
+      list-style: none;
+      border-top: 2px solid $grey-500;
 
-            &-image {
-                max-width: 48px;
-            }
-            
-            &-text {
-                &--blue {
-                    color: $blue-500;
-                }
-            }
+      &-item {
+        display: grid;
+        grid-template-columns: repeat(6, 110px);
+        padding: 8px;
+        align-items: center;
+
+        &-image {
+          max-width: 48px;
         }
 
-        &-item:not(:last-child) {
-            border-bottom: 1px solid $grey-500;
+        &-text {
+          &--blue {
+            color: $blue-500;
+          }
         }
+      }
+
+      &-item:not(:last-child) {
+        border-bottom: 1px solid $grey-500;
+      }
     }
   }
 }
