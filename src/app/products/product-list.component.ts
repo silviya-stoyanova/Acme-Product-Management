@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
   selector: 'ng-products',
@@ -10,7 +11,7 @@ export class ProductListComponent {
   filter: string = '';
   showImage: boolean = false;
   toggleImageBtnText: string = 'Show Image';
-  productList: Array<IProductList> = [
+  productsList: Array<IProduct> = [
     {
       id: 1,
       name: 'Leaf Rake',
@@ -36,15 +37,4 @@ export class ProductListComponent {
     this.showImage = !this.showImage;
     this.toggleImageBtnText = this.showImage ? 'Hide Image' : 'Show Image';
   }
-}
-
-export interface IProductList {
-  id: number;
-  name: string;
-  code: string;
-  releaseDate: string;
-  description: string;
-  price: number;
-  rating: number;
-  imageUrl: string;
 }

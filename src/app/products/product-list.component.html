@@ -2,7 +2,7 @@
   <header class="products__header">
     <p class="products__header-title">{{ pageTitle }}</p>
   </header>
-  <article class="products__filter" *ngIf="productList.length">
+  <article class="products__filter" *ngIf="productsList.length">
     <label for="products__filter-input" class="products__filter-label">
       Filter by:
     </label>
@@ -16,7 +16,7 @@
       Filtered by {{ filter }}
     </p>
   </article>
-  <section class="products__table" *ngIf="productList.length">
+  <section class="products__table" *ngIf="productsList.length">
     <article class="products__table-heading">
       <button class="products__table-heading-button" (click)="toggleImage()">
         {{ toggleImageBtnText }}
@@ -28,7 +28,7 @@
       <p class="products__table-heading-text">5 Star Rating</p>
     </article>
     <ul class="products__table-list">
-      <li class="products__table-list-item" *ngFor="let product of productList">
+      <li class="products__table-list-item" *ngFor="let product of productsList">
         <img
           class="products__table-list-item-image"
           [src]="product.imageUrl"
