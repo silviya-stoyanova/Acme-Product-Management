@@ -7,8 +7,8 @@ import { IProduct } from './product';
   styleUrls: ['product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
+  private _filter: string = '';
   pageTitle: string = 'Product List';
-  filter: string = '';
   showImage: boolean = false;
   toggleImageBtnText: string = 'Show Image';
   productsList: Array<IProduct> = [
@@ -33,6 +33,18 @@ export class ProductListComponent implements OnInit {
       imageUrl: 'assets/images/garden_cart.png',
     },
   ];
+  filteredProducts: Array<IProduct> = [...this.productsList];
+  get filter(): string {
+    return this._filter;
+  }
+  set filter(value: string) {
+    this._filter = value;
+  }
+  filterProducts(): void {
+    this.filteredProducts = this.productsList.filter((product: IProduct) =>
+      product.name.toLocaleLowerCase().includes(this.filter.toLocaleLowerCase())
+    );
+  }
   toggleImage(): void {
     this.showImage = !this.showImage;
     this.toggleImageBtnText = this.showImage ? 'Hide Image' : 'Show Image';

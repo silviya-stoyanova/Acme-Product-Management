@@ -11,6 +11,7 @@
       class="products__filter-input"
       placeholder="Enter product..."
       [(ngModel)]="filter"
+      (change)="filterProducts()"
     />
     <p class="products__filter-details" *ngIf="filter.length">
       Filtered by {{ filter }}
@@ -30,7 +31,7 @@
     <ul class="products__table-list">
       <li
         class="products__table-list-item"
-        *ngFor="let product of productsList"
+        *ngFor="let product of filteredProducts"
       >
         <img
           class="products__table-list-item-image"
