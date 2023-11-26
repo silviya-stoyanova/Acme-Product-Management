@@ -55,7 +55,8 @@
           {{ product.price | currency }}
         </p>
         <p class="products__table-list-item-text">
-          {{ product.rating }}
+          <ng-rating [rating]="product.rating"></ng-rating>
+          <!-- {{ product.rating }} -->
         </p>
       </li>
     </ul>
